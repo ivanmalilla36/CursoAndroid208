@@ -19,9 +19,7 @@ class AprendiendoKotlin : Activity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_aprendiendo_kotlin)
         //Val son valores que no cambiar y var es cuando si vambian los valores.
-//        val txt = findViewById<TextView>(R.id.mensaje)
 
-//        txt.setText("Curso de ${reackt.nombre} en platsi.com/${reackt.url}")
 
         val boton =  findViewById<Button>(R.id.botonsito)
 
