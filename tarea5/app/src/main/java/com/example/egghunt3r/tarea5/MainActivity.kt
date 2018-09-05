@@ -7,6 +7,7 @@ import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
 
@@ -25,6 +26,10 @@ class MainActivity : AppCompatActivity() {
 
             Log.d("peso",peso)
             Log.d("altura",altura)
+
+            if (peso == null || altura == null){
+                Toast.makeText(this, "Favor de ingresar los valores de altura y peso",Toast.LENGTH_SHORT).show()
+            }
 
             var imc = peso.toDouble() / (altura.toDouble() * altura.toDouble())
             resul.setText("el imc es de ($imc)")
