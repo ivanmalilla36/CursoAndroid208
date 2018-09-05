@@ -6,6 +6,7 @@ import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 
 class MainActivity : AppCompatActivity() {
 
@@ -15,6 +16,8 @@ class MainActivity : AppCompatActivity() {
         var boton = findViewById<Button>(R.id.calcular)
         var ps = findViewById<EditText>(R.id.peso)
         var al = findViewById<EditText>(R.id.altura)
+        var resul = findViewById<TextView>(R.id.resultado)
+        var stat = findViewById<TextView>(R.id.stat)
 
         boton.setOnClickListener(View.OnClickListener {
             var peso = ps.text.toString()
@@ -23,7 +26,17 @@ class MainActivity : AppCompatActivity() {
             Log.d("peso",peso)
             Log.d("altura",altura)
 
-            
+            var imc = peso.toDouble() / (altura.toDouble() * altura.toDouble())
+            resul.setText("el imc es de ($imc)")
+
+            var status = imc
+            if (status > 18 || status < 24.9){
+                stat.setText("El paciente se encuentra en el peso adecuado")
+            }
+            else {
+                stat.setText("El paciente NO se encuentra en el peso adecuado")
+            }
+
         })
 
     }
