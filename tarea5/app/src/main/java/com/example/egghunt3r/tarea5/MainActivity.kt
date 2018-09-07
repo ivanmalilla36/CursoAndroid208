@@ -36,7 +36,6 @@ class MainActivity : AppCompatActivity() {
                 var imc = peso.toDouble() / (altura.toDouble() * altura.toDouble())
                 resul.setText("el imc es de {$imc}")
 
-
                 if (imc >= 18 || imc <= 24.9){
                     stat.setText("El paciente se encuentra en el peso adecuado")
                 }
@@ -49,6 +48,9 @@ class MainActivity : AppCompatActivity() {
             }
 
         })
+
+    }
+    fun calcuImc (estatura:Double, altura:Double) {
 
     }
 }
