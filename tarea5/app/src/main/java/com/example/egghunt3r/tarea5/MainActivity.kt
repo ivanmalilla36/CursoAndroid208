@@ -33,16 +33,7 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(this, "Debe ingresar todos los valores",Toast.LENGTH_SHORT).show()
             }
             else{
-                var imc = peso.toDouble() / (altura.toDouble() * altura.toDouble())
-                resul.setText("el imc es de {$imc}")
-
-                if (imc >= 18 || imc <= 24.9){
-                    stat.setText("El paciente se encuentra en el peso adecuado")
-                }
-                else {
-                    stat.setText("El paciente NO se encuentra en el peso adecuado")
-                }
-
+                calcuImc(peso.toDouble(),altura.toDouble())
                 val inputManager: InputMethodManager =getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
                 inputManager.hideSoftInputFromWindow(currentFocus.windowToken, InputMethodManager.SHOW_FORCED)
             }
@@ -50,7 +41,23 @@ class MainActivity : AppCompatActivity() {
         })
 
     }
-    fun calcuImc (estatura:Double, altura:Double) {
 
+    fun calcuImc (estatura:Double, altura:Double) {
+        var ps = findViewById<EditText>(R.id.peso)
+        var al = findViewById<EditText>(R.id.altura)
+        var resul = findViewById<TextView>(R.id.resultado)
+
+        var peso = ps.text.toString()
+        var altura = al.text.toString()
+        var imc = peso.toDouble() / (altura.toDouble() * altura.toDouble())
+        resul.setText("el imc es de $imc")
+        var stat = findViewById<TextView>(R.id.stat)
+
+        if (imc >= 18 || imc <= 24.9){
+            stat.setText("El paciente se encuentra en el peso adecuado")
+        }
+        else {
+            stat.setText("El paciente NO se encuentra en el peso adecuado")
+        }
     }
 }
