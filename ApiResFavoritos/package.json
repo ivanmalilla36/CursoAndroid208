@@ -1,0 +1,19 @@
+{
+  "name": "apiresfavoritos",
+  "version": "1.0.0",
+  "description": "Proyecto de apirestful favoritos de node js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "author": "Ivan Ibarra",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.4"
+  }
+}
