@@ -19,20 +19,22 @@ class MainActivity : AppCompatActivity() {
         var num = findViewById<EditText>(R.id.numero)
         var resultado = findViewById<TextView>(R.id.res)
 
-
+        boton.setBackgroundResource(R.drawable.images)
         boton.setOnClickListener(View.OnClickListener {
 
             val numero = num.text.toString()
 
-            if (numero.toInt() %2== 0){
+            if (numero.toString().isEmpty()) {
+                Toast.makeText(this, "No puedes dejara ka imagen vacia", Toast.LENGTH_LONG).show()
+            }else{ if (numero.toInt() %2== 0) {
                 resultado.setText("el numero es par ${numero}")
+            }else{
+                resultado.setText("El numero no es par ${numero}")
             }
-            else {
-                resultado.setText("El numero no es par  ${numero}")
             }
+
+
         })
     }
-
-
 
 }

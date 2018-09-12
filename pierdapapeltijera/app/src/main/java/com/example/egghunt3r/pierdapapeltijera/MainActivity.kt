@@ -16,7 +16,6 @@ class MainActivity : AppCompatActivity(), ShakeDetector.Listener {
     override fun hearShake() {
         var imagen = findViewById<ImageView>(R.id.imagen)
         val random1 = (0..2).shuffled().last()
-//            Toast.makeText(this,"tu numero es ${random1}",Toast.LENGTH_SHORT).show()
 
         when (random1) {
             0 -> imagen.setImageResource(R.drawable.pierda)
@@ -39,7 +38,6 @@ class MainActivity : AppCompatActivity(), ShakeDetector.Listener {
 
         boton.setOnClickListener(View.OnClickListener {
             val random1 = (0..2).shuffled().last()
-//            Toast.makeText(this,"tu numero es ${random1}",Toast.LENGTH_SHORT).show()
 
             when (random1) {
                 0 -> imagen.setImageResource(R.drawable.pierda)

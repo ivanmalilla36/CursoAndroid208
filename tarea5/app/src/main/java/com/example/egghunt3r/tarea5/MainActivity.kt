@@ -16,11 +16,11 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
         var boton = findViewById<Button>(R.id.boton)
         var ps = findViewById<EditText>(R.id.peso)
         var al = findViewById<EditText>(R.id.altura)
-        var resul = findViewById<TextView>(R.id.resultado)
-        var stat = findViewById<TextView>(R.id.stat)
+
 
         boton.setOnClickListener(View.OnClickListener {
             var peso = ps.text.toString()
@@ -60,4 +60,5 @@ class MainActivity : AppCompatActivity() {
             stat.setText("El paciente NO se encuentra en el peso adecuado")
         }
     }
+
 }
