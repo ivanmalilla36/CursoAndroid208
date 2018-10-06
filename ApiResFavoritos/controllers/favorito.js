@@ -12,8 +12,16 @@ function prueba (req, res)  {
 }
 
 function getFavorito(req,res){
+
 	const favoritoID = req.params.id
-	res.status(200).send({data: favoritoID})
+
+	Favorito.findById(favoritoID, function(err,favorito){
+		if (err) {
+			res.status(500).send("Error al devolver marcador")
+		}else {
+		res.status(200).send({data: favorito})
+		}
+	})
 }
 
 function getFavoritos(req,res){
@@ -53,12 +61,28 @@ function saveFavorito(req,res){
 
 function updateFavorito(req,res){
 	const params = req.body
-	res.status(200).send({update: true, favorito: params})
+	const favoritoID = req.params.id
+
+	Favorito.findByIdAndUpdate(favoritoID, params, function (err, favoritoUpdated){
+		if (err) {
+			res.status(500).send("error en el servidor")
+		}
+		else {
+			res.status(200).send({data: favoritoUpdated})
+		}
+	})	
 }
 
 function deleteFavorito(req,res){
-	const params = req.body
-	res.status(200).send({delete: true, favorito: params})
+	const favoritoID = req.params.id
+	Favorito.findOneAndRemove(favoritoID, function(err,favoritoRemoved){
+		if (err) {
+			res.status(500).send("error en el servidor")
+		}
+		else{
+			res.send({data: favoritoRemoved})
+		}
+	})
 }
 
 module.exports = {

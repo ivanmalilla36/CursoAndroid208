@@ -2,7 +2,7 @@
 
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost:27017/cursofavoritos',(err,res)=>{
+mongoose.connect('mongodb://egghunt3r:egghunt3r1994@ds223653.mlab.com:23653/cursofavoritos',(err,res)=>{
 	console.log("base de datos iniciada")
 
 	if (err) {
@@ -19,5 +19,3 @@ mongoose.connect('mongodb://localhost:27017/cursofavoritos',(err,res)=>{
 
 const app = require('./app');
 const port = 3678;
-
-
